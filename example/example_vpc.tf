@@ -5,5 +5,8 @@ module "vpc" {
   # providers = {
   #   key = "magalucloud/mgc"
   # }
+}
 
+output "name" {
+  value = module.vpc.vpc.name
 }
