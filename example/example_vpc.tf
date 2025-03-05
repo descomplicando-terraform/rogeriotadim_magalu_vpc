@@ -1,12 +1,13 @@
 module "vpc" {
   source      = "../"
-  name        = "vpc-test"
+  name        = var.name
   description = "vpc created by Terraform in order to test"
-  # providers = {
-  #   key = "magalucloud/mgc"
-  # }
 }
 
-output "name" {
+output "vpc" {
+  value = module.vpc.vpc
+}
+
+output "vpc_name" {
   value = module.vpc.vpc.name
 }
